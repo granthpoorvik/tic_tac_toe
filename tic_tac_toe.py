@@ -1,4 +1,5 @@
-from helper import lis_of_ops as loo
+#from helper import lis_of_ops as loo
+#the upper import dose not concern with the tic tac toe code
 
 theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': ' \
 ', 'mid-R': ' ', 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
@@ -21,12 +22,22 @@ for k in theBoard.keys():
 
 move='X'
 for i in range (9):
-    #printBoard(theBoard)
-    loc=input(f"enter the location of the move! of {move}")
     
-    theBoard[dict_map[int(loc)]]=move
-    if move=='X':
-        move='O'
-    else:
-        move='X'
-    printBoard(theBoard)
+    loc=input(f"enter the location of the  {move} !---------------->")
+    while True:
+        if theBoard[dict_map[int(loc)]]!=' ':
+            print(f"the move is unauthorised it has been already tacken by {theBoard[dict_map[int(loc)]]} at location {loc} ")
+            loc=input(f"enter the location of the move! of {move}")
+        else:
+            
+
+        
+    
+            theBoard[dict_map[int(loc)]]=move
+            if move=='X':
+                move='O'
+            else:
+                move='X'
+            printBoard(theBoard)
+            break
+       
